@@ -1,0 +1,39 @@
+"0","# tuesdata <- tidytuesdayR::tt_load('2023-01-24')"
+"0","# survivalists <- tuesdata$survivalists"
+"0",""
+"0","# tests if a directory named ""data"" exists locally"
+"0","if (!dir.exists(here(""data""))) {"
+"0","    dir.create(here(""data""))"
+"0","}"
+"0",""
+"0","if (!file.exists(here(""data"", ""tuesdata_survivalists.csv""))) {"
+"0","    tuesdata <- tidytuesdayR::tt_load(""2023-01-24"")"
+"0","    survivalists <- tuesdata$survivalists"
+"0","    loadouts <- tuesdata$loadouts"
+"0",""
+"0","    # save the files to RDS objects"
+"0","    write.csv(tuesdata$survivalists, file = here(""data"", ""tuesdata_survivalists.csv""))"
+"0","    write.csv(tuesdata$loadouts, file = here(""data"", ""tuesdata_loadouts.csv""))"
+"0","}"
+"2","--- Compiling #TidyTuesday Information for 2023-01-24 ----
+"
+"2","--- There are 4 files available ---
+"
+"2","--- Starting Download ---
+"
+"1","
+"
+"1","	Downloading file 1 of 4: `survivalists.csv`
+"
+"1","	Downloading file 2 of 4: `loadouts.csv`
+"
+"1","	Downloading file 3 of 4: `episodes.csv`
+"
+"1","	Downloading file 4 of 4: `seasons.csv`
+"
+"1","
+"
+"2","--- Download complete ---
+"
+"0","survivalists <- read.csv(here(""data"", ""tuesdata_survivalists.csv""))"
+"0","loadouts <- read.csv(here(""data"", ""tuesdata_loadouts.csv""))"
